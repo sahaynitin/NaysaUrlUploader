@@ -1,4 +1,4 @@
-from pyrogram.types import InlineKeyboardMarkup, Inlinekeyboardbutton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 class Translation(object):
     START_TEXT = """
 Hello {}!!!
