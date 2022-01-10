@@ -273,33 +273,10 @@ async def echo(bot, update):
                 )
             ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        # logger.info(reply_markup)
-        thumbnail = Config.DEF_THUMB_NAIL_VID_S
-        thumbnail_image = Config.DEF_THUMB_NAIL_VID_S
-        if "thumbnail" in response_json:
-            if response_json["thumbnail"] is not None:
-                thumbnail = response_json["thumbnail"]
-                thumbnail_image = response_json["thumbnail"]
-        thumb_image_path = DownLoadFile(
-            thumbnail_image,
-            Config.DOWNLOAD_LOCATION + "/" +
-            str(update.from_user.id) + f'{randem}' + ".webp",
-            Config.CHUNK_SIZE,
-            None,  # bot,
-            Translation.DOWNLOAD_START,
-            update.message_id,
-            update.chat.id
-        )
-        if os.path.exists(thumb_image_path):
-            im = Image.open(thumb_image_path).convert("RGB")
-            im.save(thumb_image_path.replace(".webp", ".jpg"), "jpeg")
-        else:
-            thumb_image_path = None
-        await chk.delete()
-        time.sleep(1)
+        await imog.delete(True)
         await bot.send_message(
             chat_id=update.chat.id,
-            text=Translation.FORMAT_SELECTION.format(thumbnail) + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
+            text=Translation.FORMAT_SELECTION + "\n" + Translation.SET_CUSTOM_USERNAME_PASSWORD,
             reply_markup=reply_markup,
             parse_mode="html",
             reply_to_message_id=update.message_id
@@ -322,8 +299,7 @@ async def echo(bot, update):
             )
         ])
         reply_markup = InlineKeyboardMarkup(inline_keyboard)
-        await chk.delete()
-        time.sleep(1)
+        await imog.delete(True)
         await bot.send_message(
             chat_id=update.chat.id,
             text=Translation.FORMAT_SELECTION,
@@ -331,3 +307,5 @@ async def echo(bot, update):
             parse_mode="html",
             reply_to_message_id=update.message_id
         )
+
+
