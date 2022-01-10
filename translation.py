@@ -4,8 +4,7 @@ This is a Telegram Multipurpose Bot Which can do many functions.
 
 /help for more details..
 
-JOIN : https://t.me/TGBotsCollection \nFor the List of Telegram Bots
-"""
+JOIN :
     IFLONG_FILE_NAME = " Only 64 characters can be named . "
     RENAME_403_ERR = "Sorry. You are not permitted to rename this file."
     ABS_TEXT = " Please don't be selfish."
