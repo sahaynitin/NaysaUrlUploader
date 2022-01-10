@@ -38,5 +38,5 @@ class Database:
 
     async def get_thumbnail(self, id):
         user = await self.col.find_one({'id': int(id)})
-        return clinton.get('thumbnail', None)
+        return users.get('thumbnail')
 
