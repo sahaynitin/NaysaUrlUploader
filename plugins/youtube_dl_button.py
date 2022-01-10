@@ -36,6 +36,9 @@ from hachoir.parser import createParser
 from PIL import Image
 from helper_funcs.help_Nekmo_ffmpeg import generate_screen_shots
 from helper_funcs.ran_text import random_char
+from pyrogram.types import InputMediaPhoto
+# https://stackoverflow.com/a/37631799/4723940
+from database.access import clinton
 
 
 async def youtube_dl_call_back(bot, update):
