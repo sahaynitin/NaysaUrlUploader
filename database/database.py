@@ -2,7 +2,6 @@
 
 import datetime
 import motor.motor_asyncio
-from database.access import clinton
 class Database:
 
     def __init__(self, uri, database_name):
